@@ -13,39 +13,39 @@ def solution(board: PIL.Image) -> str:
     
     oc=pytesseract.image_to_string(board)
     
-    cp=[None]*5
-    ml=set()
-    il=set()
+    correct_place=[None]*5
+    mismatch=set()
+    incorrect=set()
     for line in oc.splitlines():
         if "Correct:" in line:
             for pos,letter in enumerate(line.replace("Correct:","").strip()):
             
-                cp[pos]=letter
+                correct_place[pos]=letter
         elif "Misplaced:" in line:
-            ml.update(line.replace("Misplaced:","").strip())
+            mismatch.update(line.replace("Misplaced:","").strip())
         elif "Incorrect:"in line:
-            il.update(line.replace("Incorrect:","").strip())
+            incorrect.update(line.replace("Incorrect:","").strip())
     
-    potgu=[]
+    potentialguess=[]
     wordlist=wordy.get_word_list()
          
     for word in wordlist:
-        v=True
+        value=True
         for i,letter in enumerate(word):
-            if letter in il:
-                v=False
+            if letter in incorrect:
+                value=False
                 break
-            if cp[i] and word[i]!=cp[i]:
-                v=False
+            if correct_place[i] and word[i]!=correct_place[i]:
+                value=False
                 break
-            if letter in ml and word[i]== letter:
-                v=False
+            if letter in mismatch and word[i]== letter:
+                value=False
                 break
                 
-            if v:
-                potgu.append(word)
-        if potgu:
-            new_guess=potgu[0]
+            if value:
+                potentialguess.append(word)
+        if potentialguess:
+            new_guess=potentialguess[0]
         else:
             new_guess=random.choice(wordlist)
     return new_guess
