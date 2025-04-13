@@ -3,7 +3,7 @@ import random
 from Wordy import get_feedback, choose_random_word
 import time
 
-def load_words_from_file(file_path=r"C:\Users\hp\Desktop\Guipythonguess\word.txt"):
+def load_words_from_file(file_path=r"word.txt"):
     word_dict = {}
     with open(file_path, "r") as file:
         for line in file:
