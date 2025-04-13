@@ -47,7 +47,7 @@ Python Tesseract library for optical character recognition (OCR), allowing the g
 
 Random module to choose words and generate hints.
 
-# How to Play
+# How to Play 🚀
 Choose Difficulty: Select from Easy, Medium, or Hard difficulty to set your preferred word length and number of attempts.
 
 Guess the Word: Enter a guess, and receive feedback on each attempt.
@@ -67,7 +67,7 @@ Guess the Word: Enter a guess, and receive feedback on each attempt.
 Play Smart, Guess Smarter!
 Start your journey with Wordypy and put your word-guessing skills to the test. Can you make the smartest guess and uncover the target word in fewer attempts?
 
-# Game Modes
+# Game Modes 🌅🌃
 Light and Dark Theme: The game includes a theme toggle, allowing players to switch between light and dark mode for the GUI.
 
 Streak Tracker: Track your winning streak to see how many games in a row you've won.
