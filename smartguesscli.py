@@ -3,7 +3,7 @@ from termcolor import colored
 from Wordy import get_feedback, choose_random_word
 
 def play_cli():
-    def load_words_from_file(file_path=r"C:\Users\hp\Desktop\Guipythonguess\word.txt"):
+    def load_words_from_file(file_path=r"word.txt"):
         word_dict = {}
         with open(file_path, "r") as file:
             for line in file:
